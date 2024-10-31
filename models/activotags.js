@@ -15,7 +15,8 @@ module.exports = (sequelize, DataTypes) => {
   }
   ActivoTags.init({
     activoId: DataTypes.INTEGER,
-    tagId: DataTypes.INTEGER
+    tagId: DataTypes.INTEGER,
+    info: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'ActivoTags',

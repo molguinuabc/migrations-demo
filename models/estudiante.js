@@ -3,24 +3,24 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Tag extends Model {
+  class Estudiante extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      models.Tag.belongsToMany(models.Activo,{through:models.ActivoTags})
+      // define association here
     }
   }
-  Tag.init({
-    tag: DataTypes.STRING
+  Estudiante.init({
+    matricula: DataTypes.INTEGER,
+    ap_paterno: DataTypes.STRING,
+    ap_materno: DataTypes.STRING,
+    nombre: DataTypes.STRING
   }, {
     sequelize,
-    name: {
-      singular:'tag',
-      plural: 'tags'
-    },
+    modelName: 'Estudiante',
   });
-  return Tag;
+  return Estudiante;
 };

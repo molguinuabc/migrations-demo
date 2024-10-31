@@ -37,7 +37,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
-    modelName: 'Activo',
+    
+    name: {
+      singular:'activo',
+      plural: 'activos'
+    },
   });
 
   return Activo;
